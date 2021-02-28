@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "name": "Artist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lastname": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "aka": {
+      "type": "string"
+    },
+    "birth": {
+      "type": "string"
+    },
+    "death": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "imagecredit": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "biocredit": {
+      "type": "string"
+    },
+    "paintings": {
+      "collection": "painting",
+      "via": "artist"
+    },
+    "country": {
+      "model": "country"
+    }
+  }
+}

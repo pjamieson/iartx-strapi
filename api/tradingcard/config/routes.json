@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tradingcards",
+      "handler": "tradingcard.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tradingcards/count",
+      "handler": "tradingcard.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tradingcards/:id",
+      "handler": "tradingcard.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tradingcards",
+      "handler": "tradingcard.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tradingcards/:id",
+      "handler": "tradingcard.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tradingcards/:id",
+      "handler": "tradingcard.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

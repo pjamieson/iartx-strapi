@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paintings",
+  "info": {
+    "name": "Painting",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "sku": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "date": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "qty": {
+      "type": "integer",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "feature": {
+      "type": "boolean",
+      "default": false
+    },
+    "archive": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer"
+    },
+    "artist": {
+      "via": "paintings",
+      "model": "artist"
+    },
+    "subgenres": {
+      "collection": "subgenre"
+    },
+    "orders": {
+      "model": "order",
+      "via": "paintings"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "name": "Author",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lastname": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "aka": {
+      "type": "string"
+    },
+    "birth": {
+      "type": "string"
+    },
+    "death": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "imagecredit": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "biocredit": {
+      "type": "string"
+    }
+  }
+}

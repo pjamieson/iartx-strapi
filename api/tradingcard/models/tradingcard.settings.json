@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tradingcards",
+  "info": {
+    "name": "Tradingcard"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "sku": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "sku"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "limitation": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "qty": {
+      "type": "integer",
+      "required": true
+    },
+    "feature": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

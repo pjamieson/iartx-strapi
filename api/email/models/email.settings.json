@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emails",
+  "info": {
+    "name": "Email"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

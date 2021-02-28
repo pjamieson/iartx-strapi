@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/subgenres",
+      "handler": "subgenre.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/subgenres/count",
+      "handler": "subgenre.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/subgenres/:id",
+      "handler": "subgenre.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/subgenres",
+      "handler": "subgenre.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/subgenres/:id",
+      "handler": "subgenre.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/subgenres/:id",
+      "handler": "subgenre.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

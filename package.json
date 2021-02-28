@@ -1,0 +1,38 @@
+{
+  "name": "iartx-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Strapi CMS backend for iartx [dot] com",
+  "dependencies": {
+    "knex": "<0.20.0",
+    "sqlite3": "5.0.0",
+    "strapi": "3.5.1",
+    "strapi-admin": "3.5.1",
+    "strapi-connector-bookshelf": "3.5.1",
+    "strapi-plugin-content-manager": "3.5.1",
+    "strapi-plugin-content-type-builder": "3.5.1",
+    "strapi-plugin-email": "3.5.1",
+    "strapi-plugin-upload": "3.5.1",
+    "strapi-plugin-users-permissions": "3.5.1",
+    "strapi-provider-upload-aws-s3": "^3.5.1",
+    "strapi-utils": "3.5.1"
+  },
+  "devDependencies": {},
+  "author": {
+    "name": "Patrick Jamieson <patrick@patrickjamieson.com>"
+  },
+  "strapi": {
+    "uuid": "a23c9172-6ace-4f25-a1ef-9255e9c775aa"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "license": "MIT"
+}

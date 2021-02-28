@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions",
+  "info": {
+    "name": "Promotion"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "discount_percent": {
+      "type": "decimal",
+      "required": true
+    },
+    "begindate": {
+      "type": "date",
+      "required": true,
+      "default": "2021-02-01T20:00:00.000Z"
+    },
+    "enddate": {
+      "type": "date",
+      "required": true,
+      "default": "2021-02-28T20:00:00.000Z"
+    },
+    "books": {
+      "type": "boolean",
+      "default": false
+    },
+    "paintings": {
+      "type": "boolean",
+      "default": false
+    },
+    "tradingcards": {
+      "type": "boolean",
+      "default": false
+    },
+    "specific_sku": {
+      "type": "string"
+    }
+  }
+}
