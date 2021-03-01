@@ -5,6 +5,7 @@
   "description": "Strapi CMS backend for iartx [dot] com",
   "dependencies": {
     "knex": "<0.20.0",
+    "pg": "^8.5.1",
     "sqlite3": "5.0.0",
     "strapi": "3.5.1",
     "strapi-admin": "3.5.1",
