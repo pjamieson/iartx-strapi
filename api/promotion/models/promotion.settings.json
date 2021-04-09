@@ -42,6 +42,10 @@
     },
     "specific_sku": {
       "type": "string"
+    },
+    "orders": {
+      "via": "promotion",
+      "collection": "order"
     }
   }
 }

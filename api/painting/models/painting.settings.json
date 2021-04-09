@@ -73,8 +73,8 @@
       "collection": "subgenre"
     },
     "orders": {
-      "model": "order",
-      "via": "paintings"
+      "via": "paintings",
+      "collection": "order"
     }
   }
 }

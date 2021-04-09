@@ -59,6 +59,10 @@
     "order": {
       "type": "integer",
       "required": true
+    },
+    "orders": {
+      "via": "tradingcards",
+      "collection": "order"
     }
   }
 }

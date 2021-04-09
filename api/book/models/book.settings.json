@@ -19,6 +19,10 @@
     "slug": {
       "type": "uid",
       "targetField": "sku"
+    },
+    "orders": {
+      "via": "books",
+      "collection": "order"
     }
   }
 }

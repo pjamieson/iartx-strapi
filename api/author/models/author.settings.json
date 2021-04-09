@@ -43,6 +43,10 @@
     },
     "biocredit": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "lastname"
     }
   }
 }

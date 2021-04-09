@@ -50,6 +50,10 @@
     },
     "country": {
       "model": "country"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "lastname"
     }
   }
 }
