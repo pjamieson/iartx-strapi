@@ -46,8 +46,8 @@ module.exports = {
           })
           return validatedItem // forces block to complete before continuing
         }
-      } else if (item.itemType === 'product') {
-        const validatedItem = await strapi.services.product.findOne({
+      } else if (item.itemType === 'book') {
+        const validatedItem = await strapi.services.book.findOne({
           sku: item.sku
         })
         if (validatedItem) {
@@ -96,8 +96,8 @@ module.exports = {
 
     let paintings = []
     let tradingcards = []
-    let products = []
-    let card_qty = []
+    let books = []
+    let cart_items = []
     let sanitizedCart = []
 
     // Prepare items and quantities for posting of order to Strapi
@@ -107,7 +107,7 @@ module.exports = {
           sku: item.sku
         })
         if (cmsItem) {
-          card_qty.push({
+          cart_items.push({
             item_type: 'painting',
             sku: item.sku,
             title: item.title,
@@ -124,7 +124,7 @@ module.exports = {
           sku: item.sku
         })
         if (cmsItem) {
-          card_qty.push({
+          cart_items.push({
             item_type: 'tradingcard',
             sku: item.sku,
             title: item.title,
@@ -136,18 +136,18 @@ module.exports = {
           )
           return cmsItem // forces block to complete before continuing
         }
-      } else if (item.itemType === 'product') {
-        const cmsItem = await strapi.services.product.findOne({
+      } else if (item.itemType === 'book') {
+        const cmsItem = await strapi.services.book.findOne({
           sku: item.sku
         })
         if (cmsItem) {
-          card_qty.push({
-            item_type: 'product',
+          cart_items.push({
+            item_type: 'book',
             sku: item.sku,
             title: item.title,
             qty: item.qty
           })
-          products.push(cmsItem)
+          books.push(cmsItem)
           sanitizedCart.push(
             {...cmsItem, ...{qty: item.qty}}
           )
@@ -157,13 +157,15 @@ module.exports = {
     }))
 
     let subtotal = strapi.config.functions.cart.cartSubtotal(sanitizedCart)
+    let discount = 0.00
     let salestax = strapi.config.functions.cart.cartSalesTax(sanitizedCart, salesTaxRate)
     let shipping = strapi.config.functions.cart.cartShipping(sanitizedCart)
     let total = strapi.config.functions.cart.cartTotal(sanitizedCart, salesTaxRate)
 
     total = total * .01 // Unlike Stripe, Strapi expects dollars, not cents
 
-    const stripe_paymentintent_id = paymentIntent.id
+    const stripe_payment_id = paymentIntent.id
+    //console.log("create order stripe_paymentintent_id", stripe_paymentintent_id)
 
     const entry = {
       firstname,
@@ -179,15 +181,16 @@ module.exports = {
 
       paintings,
       tradingcards,
-      products,
-      card_qty,
+      books,
+      cart: cart_items,
 
       subtotal,
+      discount,
       salestax,
       shipping,
       total,
 
-      stripe_paymentintent_id
+      stripe_payment_id
     }
 
     try {

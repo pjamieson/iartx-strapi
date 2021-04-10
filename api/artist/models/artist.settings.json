@@ -54,6 +54,9 @@
     "slug": {
       "type": "uid",
       "targetField": "lastname"
+    },
+    "publications": {
+      "type": "richtext"
     }
   }
 }
