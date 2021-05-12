@@ -67,8 +67,8 @@
       "type": "text"
     },
     "paintings": {
-      "collection": "painting",
       "via": "orders",
+      "collection": "painting",
       "dominant": true
     },
     "books": {
