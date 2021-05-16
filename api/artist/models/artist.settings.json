@@ -62,6 +62,10 @@
     "iscardartist": {
       "type": "boolean",
       "default": false
+    },
+    "tradingcards": {
+      "via": "artist",
+      "collection": "tradingcard"
     }
   }
 }

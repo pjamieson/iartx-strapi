@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "tradingcards",
   "info": {
-    "name": "Tradingcard"
+    "name": "Tradingcard",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -33,7 +34,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "limitation": {
       "type": "string"
@@ -63,6 +65,18 @@
     "orders": {
       "via": "tradingcards",
       "collection": "order"
+    },
+    "artist": {
+      "model": "artist",
+      "via": "tradingcards"
+    },
+    "player": {
+      "model": "player",
+      "via": "tradingcards"
+    },
+    "cardseries": {
+      "via": "tradingcards",
+      "model": "cardseries"
     }
   }
 }

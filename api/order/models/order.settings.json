@@ -77,8 +77,8 @@
       "dominant": true
     },
     "tradingcards": {
-      "collection": "tradingcard",
       "via": "orders",
+      "collection": "tradingcard",
       "dominant": true
     },
     "promotion": {

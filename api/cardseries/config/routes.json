@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cardseries",
+      "handler": "cardseries.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cardseries/count",
+      "handler": "cardseries.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cardseries/:id",
+      "handler": "cardseries.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cardseries",
+      "handler": "cardseries.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cardseries/:id",
+      "handler": "cardseries.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cardseries/:id",
+      "handler": "cardseries.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

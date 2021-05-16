@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "players",
+  "collectionName": "cardseries",
   "info": {
-    "name": "Player"
+    "name": "Cardseries",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -17,11 +18,22 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     },
     "tradingcards": {
-      "via": "player",
+      "via": "cardseries",
       "collection": "tradingcard"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    },
+    "subhead": {
+      "type": "string"
     }
   }
 }
