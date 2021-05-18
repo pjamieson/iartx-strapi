@@ -71,8 +71,8 @@
       "via": "tradingcards"
     },
     "player": {
-      "model": "player",
-      "via": "tradingcards"
+      "via": "tradingcards",
+      "model": "player"
     },
     "cardseries": {
       "via": "tradingcards",
