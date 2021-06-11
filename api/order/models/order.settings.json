@@ -72,8 +72,8 @@
       "dominant": true
     },
     "books": {
-      "collection": "book",
       "via": "orders",
+      "collection": "book",
       "dominant": true
     },
     "tradingcards": {

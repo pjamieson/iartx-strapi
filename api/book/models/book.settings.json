@@ -23,6 +23,90 @@
     "orders": {
       "via": "books",
       "collection": "order"
+    },
+    "artist": {
+      "via": "books",
+      "model": "artist"
+    },
+    "authors": {
+      "collection": "author"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "isbn": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "pubplace": {
+      "type": "string"
+    },
+    "pubyear": {
+      "type": "string"
+    },
+    "binding": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "qty": {
+      "required": true,
+      "type": "integer",
+      "default": 1
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "feature": {
+      "type": "boolean"
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "subgenres": {
+      "collection": "subgenre"
+    },
+    "isAsNew": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "pubstring": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "edition": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "pagecount": {
+      "type": "integer"
+    },
+    "ozweight": {
+      "type": "integer"
     }
   }
 }

@@ -33,7 +33,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "imagecredit": {
       "type": "string"
@@ -47,6 +48,9 @@
     "slug": {
       "type": "uid",
       "targetField": "lastname"
+    },
+    "country": {
+      "model": "country"
     }
   }
 }

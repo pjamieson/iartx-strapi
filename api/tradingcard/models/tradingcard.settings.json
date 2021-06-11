@@ -67,8 +67,8 @@
       "collection": "order"
     },
     "artist": {
-      "model": "artist",
-      "via": "tradingcards"
+      "via": "tradingcards",
+      "model": "artist"
     },
     "player": {
       "via": "tradingcards",

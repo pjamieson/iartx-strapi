@@ -66,6 +66,10 @@
     "tradingcards": {
       "via": "artist",
       "collection": "tradingcard"
+    },
+    "books": {
+      "via": "artist",
+      "collection": "book"
     }
   }
 }
