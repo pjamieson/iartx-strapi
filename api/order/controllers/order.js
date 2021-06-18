@@ -15,6 +15,7 @@ module.exports = {
     // Items & qtys in ctx.request.body
     const {
       salesTaxRate,
+      country,
       cart
     } = ctx.request.body
     //console.log("setupStripe salesTaxRate", salesTaxRate)
@@ -62,7 +63,7 @@ module.exports = {
       }
     }))
 
-    total = strapi.config.functions.cart.cartTotal(validatedCart, salesTaxRate)
+    total = strapi.config.functions.cart.cartTotal(validatedCart, salesTaxRate, country)
 
     try {
       const paymentIntent = await stripe.paymentIntents.create({
@@ -159,8 +160,8 @@ module.exports = {
     let subtotal = strapi.config.functions.cart.cartSubtotal(sanitizedCart)
     let discount = 0.00
     let salestax = strapi.config.functions.cart.cartSalesTax(sanitizedCart, salesTaxRate)
-    let shipping = strapi.config.functions.cart.cartShipping(sanitizedCart)
-    let total = strapi.config.functions.cart.cartTotal(sanitizedCart, salesTaxRate)
+    let shipping = strapi.config.functions.cart.cartShipping(sanitizedCart, country)
+    let total = strapi.config.functions.cart.cartTotal(sanitizedCart, salesTaxRate, country)
 
     total = total * .01 // Unlike Stripe, Strapi expects dollars, not cents
 
