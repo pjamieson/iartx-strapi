@@ -4,7 +4,7 @@
   "version": "3.6.8",
   "description": "Strapi CMS backend for iartx [dot] com",
   "dependencies": {
-    "knex": "<0.20.0",
+    "knex": "<2.5.0",
     "pg": "^8.5.1",
     "shippo": "^1.5.0",
     "sqlite3": "5.0.0",
